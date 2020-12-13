@@ -86,6 +86,6 @@ textarea {
 #heart:hover {
     color: red
 }
-#comment:hover, #comment:active {
+#bin:hover, #bin:active {
     color: rgb(89, 167, 93);
 }
