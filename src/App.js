@@ -49,6 +49,15 @@ class App extends React.Component {
     })
   }
 
+  removePost(postid) {
+    console.log(postid)
+    toastr.warning("You removed a post");
+    let updatedPosts = this.state.publishedPosts.filter(post => post.postid != postid)
+    this.setState({
+      publishedPosts: updatedPosts
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -70,7 +79,8 @@ class App extends React.Component {
           <Create onsubmit={(username, posttext, date) => {this.updatePublishedPosts(username, posttext, date)}}/>
           </Route>
           <Route exact path="/">
-          <Timeline posts={this.state.publishedPosts}  addLike={(postId) => this.addLike(postId)} />          </Route>
+            <Timeline posts={this.state.publishedPosts}  addLike={(postId) => this.addLike(postId)} removepost={(postid) => this.removePost(postid)} />          
+          </Route>
           <Route path="/">
             Error: 404 not found
           </Route>

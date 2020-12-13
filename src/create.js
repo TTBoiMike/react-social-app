@@ -19,7 +19,6 @@ class Create extends React.Component {
         const newState = {};
         newState[event.target.name] = event.target.value
         this.setState(newState);
-        console.log(this.state)
     }
 
     handleSubmit(event) {
@@ -42,11 +41,11 @@ class Create extends React.Component {
                         <h2>Publish a Post</h2>
                     <form className="create-post-form" onSubmit={(e) => this.handleSubmit(e)} onChange={(e) => this.handleChange(e)}>
                         <div className="profile-form-top-row">
-                            <input type="text" name="username" id="username" placeholder="enter username" value={this.state.username} required/>
-                            <input type="date" id="date" name="date" value={this.state.date} required />
+                            <input type="text" name="username" id="username" placeholder="enter username" value={this.state.username} />
+                            <input type="date" id="date" name="date" value={this.state.date}  />
                         </div>
                         <div>
-                            <textarea id="posttext" name="posttext" rows="5" value={this.state.posttext} required />
+                            <textarea id="posttext" name="posttext" rows="5" value={this.state.posttext} />
                         </div>
                         <button type="submit">Publish</button>
                     </form>
